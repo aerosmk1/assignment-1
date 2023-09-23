@@ -1,0 +1,50 @@
+HTTP 1.1 Vs HTTP 2
+	
+	
+	Hypertext transport protocol ,its language of web - protocol is used to communicate with the web browser and web server . it is the basis for almost all web applications.
+	More specifically, HTTP is the method computers and servers use to request and send information.Developed by Timothy Berners-Lee in 1989 as a communication standard for 
+	the World Wide Web, HTTP is a top-level application protocol that exchanges information between a client computer and a local or remote web server. In this process, a 
+	client sends a text-based request to a server and the server sends a resource like an HTML page back to the client.For e,g., when someone navigates to flowers.com on 
+	their laptop, their web browser sends an HTTP request to the server for the content that appears on the page. Then, server send HTTP responses with the text, images, and 
+	formatting that the browser displays to the user. Note that not all of the resources are returned to the client in the first call for data.The requests and responses will 
+	go back and forth between the server and client until the web browser has received all the resources necessary to render the contents of the HTML page on your screen.
+	
+	
+	HTTP.1.1
+			 The first usable version of HTTP was created in 1997. Because it went through several stages of development, this first version of HTTP was called HTTP 1.1. 
+		     This version is still in use on the web.http  1.1 the standardized protocol for more than 15 years extension.
+			 To speed up web performance, both HTTP 1.1 and HTTP 2 compress HTTP messages to make them smaller.
+
+	HTTP.2
+	         In 2015, a new version of HTTP called HTTP 2 was created. HTTP 2 solves several problems that the creators of HTTP 1.1 did not anticipate. 
+			 In particular, HTTP 2 is much faster and more efficient than HTTP 1.1. http 2 protocol for greater performance.
+			 One of the ways in which HTTP 2 is faster is in how it prioritizes content during the loading process.
+			 However, HTTP 2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. 
+	         This eliminates few bytes from every HTTP packet.HTTP 2 is different from HTTP 1 in several ways,including supporting server push,multiplexing of requests,and header compression. 
+	         HTTP 2 also uses binary encoding rather than text encoding, making it more efficient.Most modern web browsers, including Chrome, Firefox, and Safari, support HTTP 2.
+	
+    prioritization
+             In the context of web performance, prioritization refers to the order in which pieces of content are loaded. Suppose a user visits a news website and navigates to 
+			 an article.Should the photo at the top of the article load first? Should the text of the article load first? Should the banner ads load first?.
+			 Prioritization affects a webpage's load time. For example, certain resources, like large JavaScript files, may block the rest of the page from loading if they have to 
+			 load first. More of the page can load at once if these render-blocking resources load last.
+
+			 In addition, the order in which these page resources load affects how the user perceives page load time. If only behind-the-scenes content (like a CSS file) or content 
+			 the user can't see immediately (like banner ads at the bottom of the page) loads first, the user will think the page is not loading at all. If the content that's most 
+			 important to the user loads first, such as the image at the top of the page, then the user will perceive the page as loading faster.
+
+	prioritization in HTTP.2 affect performance
+	
+			 In HTTP.2, developers have hands-on, detailed control over prioritization. This allows them to maximize perceived and actual page load speed to a degree that was not 
+			 possible in HTTP 1.1 . HTTP 2 offers a feature called weighted prioritization. This allows developers to decide which page resources will load first, every time. 
+			 In HTTP 2, when a client makes a request for a webpage, the server sends several streams of data to the client at once, instead of sending one thing after another. 
+			 This method of data delivery is known as multiplexing. Developers can assign each of these data streams a different weighted value, and the value tells the client 
+			 which data stream to render first.
+
+
+    HTTP 1.1 VS HTTP 2
+			 It works on the textual format.          VS	It works on the binary protocol.
+			 There is head of line blocking that blocks all 						It allows multiplexing so one TCP connection 
+			 the requests behind it until it doesnt get its all resources.	    VS    is required for multiple requests.
+			 It uses requests resource Inlining for use getting multiple pages	VS  It uses PUSH frame by server that collects all multiple pages 
+			 It compresses data by itself.            VS        	   It uses HPACK for data compression.
